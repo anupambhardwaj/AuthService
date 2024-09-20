@@ -8,11 +8,11 @@ import task_master_server.project.routes.signIn
 import example.com.routes.signUp
 
 fun Application.configureDatabases() {
-    val mongoDatabase = connectToMongoDB()
-    val userService = UserService(mongoDatabase)
+//    val mongoDatabase = connectToMongoDB()
+//    val userService = UserService(mongoDatabase)
     routing {
-        signIn(userService)
-        signUp(userService)
+        signIn()
+        signUp()
     }
 }
 

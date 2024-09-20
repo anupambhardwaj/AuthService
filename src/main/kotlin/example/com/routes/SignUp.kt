@@ -26,7 +26,7 @@ import example.com.data.response.FirebaseResponseBody
 import example.com.data.model.UserDetails
 
 @OptIn(InternalAPI::class, ExperimentalSerializationApi::class)
-fun Route.signUp(userService: UserService) {
+fun Route.signUp() {
     post("/signUp") {
         val originalCall = call
         val credentials = originalCall.receive<FirebaseRequestBody>()
@@ -43,7 +43,7 @@ fun Route.signUp(userService: UserService) {
                         password = credentials.password,
                         token = firebaseResponse.idToken
                     )
-                    userService.create(userDetails)
+//                    userService.create(userDetails)
                     val apiResponse = ApiResponse(
                         success = true,
                         message = "OK",

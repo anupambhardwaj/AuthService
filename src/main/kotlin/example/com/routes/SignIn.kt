@@ -24,7 +24,7 @@ import example.com.data.response.ErrorResponse
 import example.com.data.response.FirebaseResponseBody
 import example.com.data.model.UserDetails
 
-fun Route.signIn(userService: UserService) {
+fun Route.signIn() {
     post("/signIn") {
         val originalCall = call
         val credentials = originalCall.receive<FirebaseRequestBody>()
